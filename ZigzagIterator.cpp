@@ -24,7 +24,7 @@ public:
         }
 
         int next = *vectors[indexVectors].first++;
-        getNextIndexAmongLists();
+        getNextIndexVectors();
 
         return next;
     }
@@ -38,11 +38,11 @@ public:
         endedVectors = 0;
         while (vectors[indexVectors].first == vectors[indexVectors].second && endedVectors < vectors.size()) {
             endedVectors++;
-            getNextIndexAmongLists();
+            getNextIndexVectors();
         }
     }
 
-    void getNextIndexAmongLists() {
+    void getNextIndexVectors() {
         indexVectors = (indexVectors + 1) % vectors.size();
     }
 };
