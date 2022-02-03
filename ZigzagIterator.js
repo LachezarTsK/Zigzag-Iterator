@@ -22,7 +22,7 @@ ZigzagIterator.prototype.next = function next() {
 
     let next = this.vectors[this.indexVectors][this.indexes[this.indexVectors]];
     this.indexes[this.indexVectors]++;
-    this.getNextIndexAmongLists();
+    this.getNextIndexVectors();
 
     return next;
 };
@@ -41,10 +41,10 @@ ZigzagIterator.prototype.moveForward = function () {
     this.endedVectors = 0;
     while (this.indexes[this.indexVectors] === this.vectors[this.indexVectors].length && this.endedVectors < this.vectors.length) {
         this.endedVectors++;
-        this.getNextIndexAmongLists();
+        this.getNextIndexVectors();
     }
 };
 
-ZigzagIterator.prototype.getNextIndexAmongLists = function () {
+ZigzagIterator.prototype.getNextIndexVectors = function () {
     this.indexVectors = (this.indexVectors + 1) % this.vectors.length;
 };
