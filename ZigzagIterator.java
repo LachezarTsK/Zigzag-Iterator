@@ -23,7 +23,7 @@ public class ZigzagIterator {
 
         int next = vectors.get(indexVectors).get(indexes[indexVectors]);
         indexes[indexVectors]++;
-        getNextIndexAmongLists();
+        getNextIndexVectors();
 
         return next;
     }
@@ -37,11 +37,11 @@ public class ZigzagIterator {
         endedVectors = 0;
         while (indexes[indexVectors] == vectors.get(indexVectors).size() && endedVectors < vectors.size()) {
             endedVectors++;
-            getNextIndexAmongLists();
+            getNextIndexVectors();
         }
     }
 
-    public void getNextIndexAmongLists() {
+    public void getNextIndexVectors() {
         indexVectors = (indexVectors + 1) % vectors.size();
     }
 }
